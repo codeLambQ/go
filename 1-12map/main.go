@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sync"
 )
 
 func main() {
@@ -47,5 +46,5 @@ func main() {
 	}
 
 	// 并发访问 map，更安全
-	m3 := sync.Map{}
+	//m3 := sync.Map{}
 }
