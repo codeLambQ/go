@@ -34,3 +34,31 @@ func Test_min1_1(t *testing.T) {
 		}
 	}
 }
+
+// 标准的 go 语言测试方法
+func Test_min1_2(t *testing.T) {
+	type args struct {
+		a int
+		b int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{"1", args{1, 2}, 1},
+		{"2", args{2, 3}, 2},
+		{"3", args{12, 23}, 12},
+		{"4", args{4, 5}, 4},
+	}
+
+	for _, tt := range tests {
+		// 可以并发的运行测试
+		t.Run(tt.name, func(t *testing.T) {
+			if got := min1(tt.args.a, tt.args.b); got != tt.want {
+				t.Errorf("min1() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
