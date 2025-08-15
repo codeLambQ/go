@@ -33,4 +33,5 @@ func main() {
 	// 解决办法，创建出来一个方法，方法里面来处理 panic
 	result := divideByZero(10, 0)
 	println(result)
+
 }
